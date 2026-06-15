@@ -2,18 +2,22 @@
 
 SERVICE=$1
 
-echo "===== SYSTEMCTL STATUS ====="
-systemctl status $SERVICE --no-pager
+echo "=== SERVICE STATUS ==="
+systemctl status $SERVICE --no-pager 2>/dev/null || echo "systemctl unavailable in Codespaces"
 
-echo "===== JOURNAL LOGS (LAST 100) ====="
-journalctl -u $SERVICE -n 100 --no-pager
+echo ""
+echo "=== LOGS ==="
+journalctl -u $SERVICE -n 100 --no-pager 2>/dev/null || echo "No journal access"
 
-echo "===== CPU + MEMORY ====="
+echo ""
+echo "=== SYSTEM HEALTH ==="
 top -b -n 1 | head -20
+
+echo ""
 free -h
 
-echo "===== DISK USAGE ====="
+echo ""
 df -h
 
-echo "===== NETWORK PORTS ====="
+echo ""
 ss -tupln
