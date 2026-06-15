@@ -1,6 +1,6 @@
 ---
 - name: Configure troubleshooting lab host
   hosts: lab
-  become: false
+  become: true
   roles:
     - common
