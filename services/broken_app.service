@@ -1,1 +1,11 @@
+[Unit]
+Description=Broken Demo Service
+After=network.target
 
+[Service]
+ExecStart=/bin/bash /opt/app/run.sh
+Restart=always
+User=demo
+
+[Install]
+WantedBy=multi-user.target
