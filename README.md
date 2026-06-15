@@ -4,7 +4,7 @@ Monday's Version
 
 # HPC Linux Troubleshooting Lab (Codespaces Edition)
 
-This project simulates a simplified HPC (High Performance Computing) environment to demonstrate core systems engineering concepts including MPI execution, batch scheduling (Slurm-style), system failure diagnosis, and service management using systemd-like unit configuration.
+I created this project to  simulate a simplified HPC (High Performance Computing) environment to demonstrate core systems engineering concepts including MPI execution, batch scheduling (Slurm-style), system failure diagnosis, and service management using systemd-like unit configuration.
 
 The lab is designed to replicate real-world cluster troubleshooting workflows in a controlled environment (GitHub Codespaces / Linux container).
 
@@ -16,7 +16,9 @@ The lab is designed to replicate real-world cluster troubleshooting workflows in
 
 ## 1. MPI (Parallel Execution Layer)
 
-I started with MPI because it represents the fundamental compute layer in HPC systems — where work is distributed across multiple processes.
+I started with MPI(Message Passing Interface) which is a standard communication framework used by distributed memory HPC applications. It allows proccess running on multiple CPUs or nodes to exchange data using oeprations such as send, receive, nbroadcast and reduce. MPI enables large scientific simulations and parallel workloads to scale across clusters. 
+
+The
 
 I compiled and executed a simple MPI program using mpicc and mpirun. When I first ran into the “slot” error, I investigated why MPI was refusing to launch multiple processes. I learned that MPI enforces a concept called slots, which represent available execution capacity on a node.
 
