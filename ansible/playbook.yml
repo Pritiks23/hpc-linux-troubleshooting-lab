@@ -1,1 +1,10 @@
-
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install dependencies
+      apt:
+        name:
+          - htop
+          - slurm-wlm
+          - openssh-server
+        state: present
