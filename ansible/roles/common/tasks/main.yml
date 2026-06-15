@@ -1,1 +1,6 @@
-
+- name: Install basic packages
+  apt:
+    name:
+      - htop
+      - curl
+    state: present
