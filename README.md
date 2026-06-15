@@ -11,6 +11,9 @@ The lab is designed to replicate real-world cluster troubleshooting workflows in
 ---
 
 ## What This Project Demonstrates
+<img width="1700" height="1646" alt="image" src="https://github.com/user-attachments/assets/13b45e85-753d-463e-bd83-e4edf7843d98" />
+
+
 ## 1. MPI (Parallel Execution Layer)
 
 I started with MPI because it represents the fundamental compute layer in HPC systems — where work is distributed across multiple processes.
@@ -26,6 +29,8 @@ I did this because in containerized environments like Codespaces, the system doe
 This helped me understand how MPI adapts to constrained environments and how process-based parallelism is actually orchestrated.
 
 ## 2. Slurm (Batch Scheduling Simulation)
+<img width="1700" height="404" alt="image" src="https://github.com/user-attachments/assets/4c3ed500-19cd-4a26-a6c2-7901722cea27" />
+
 
 Next, I explored the Slurm module because real HPC systems never run workloads manually — everything goes through a scheduler.
 
@@ -77,6 +82,8 @@ bash fake_ssh_failure.sh
 I did this because remote access is critical in HPC systems, and SSH failures often block entire workflows.
 
 The output showed that systemd was not available in this environment, which helped me understand how service management differs between full Linux systems and containerized environments like Codespaces.
+<img width="1700" height="686" alt="image" src="https://github.com/user-attachments/assets/19f25547-d5dd-472c-9433-71eda2cfd435" />
+<img width="1700" height="440" alt="image" src="https://github.com/user-attachments/assets/2304d168-4b63-4962-9f74-ad00fea41477" />
 
 
 ## 4. systemd Service Debugging
@@ -99,6 +106,12 @@ Since systemd is not active in this container, I validated correctness by manual
 
 
 ## 5. HPC Ecosystem Concepts (Ansible + Slurm + Spack)
+<img width="1700" height="542" alt="image" src="https://github.com/user-attachments/assets/5f368aeb-232c-418d-b956-2c051e400bed" />
+<img width="1570" height="820" alt="image" src="https://github.com/user-attachments/assets/f7f002b3-5174-4ff9-8e00-7ccada247168" />
+<img width="1570" height="438" alt="image" src="https://github.com/user-attachments/assets/c341d08d-559a-4568-bb1e-879fc10e2454" />
+
+
+
 
 Finally, I explored supporting HPC ecosystem tools to understand how clusters are provisioned and managed.
 
