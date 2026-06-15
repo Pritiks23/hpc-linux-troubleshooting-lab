@@ -1,1 +1,10 @@
+[Unit]
+Description=Broken HPC Service
+After=network.target
 
+[Service]
+ExecStart=/opt/app/run.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
