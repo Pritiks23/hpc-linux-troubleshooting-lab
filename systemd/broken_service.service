@@ -1,0 +1,11 @@
+[Unit]
+Description=Broken demo service for troubleshooting
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/nonexistent/broken-binary
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
