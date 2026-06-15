@@ -1,10 +1,11 @@
-- hosts: all
-  become: yes
+- hosts: local
   tasks:
-    - name: Install dependencies
-      apt:
-        name:
-          - htop
-          - slurm-wlm
-          - openssh-server
-        state: present
+    - name: Create directory
+      file:
+        path: /tmp/hpc_ansible
+        state: directory
+
+    - name: Write status file
+      copy:
+        content: "HPC environment configured"
+        dest: /tmp/hpc_ansible/status.txt
