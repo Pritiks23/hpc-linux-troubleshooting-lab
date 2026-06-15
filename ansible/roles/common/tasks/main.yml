@@ -1,6 +1,1 @@
----
-- name: Ensure diagnostics tools are present
-  ansible.builtin.package:
-    name:
-      - procps
-    state: present
+
