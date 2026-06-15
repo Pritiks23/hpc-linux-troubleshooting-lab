@@ -60,7 +60,7 @@ I executed a memory stress script:
 
 bash fake_memory_pressure.sh
 
-I did this because memory exhaustion is one of the most common failure modes in HPC jobs. The process was terminated by the Linux kernel, which taught me how the Out-of-Memory (OOM) killer behaves when the system runs out of available memory.
+I did this because memory exhaustion is one of the most common failure modes in HPC jobs. The process was terminated by the Linux kernel, which demonstrated how the Out-of-Memory (OOM) killer behaves when the system runs out of available memory.
 
 This demonstrated that failures at scale are often abrupt and not always gracefully handled by applications.
 
@@ -117,11 +117,13 @@ Since systemd is not active in this container, I validated correctness by manual
 
 Finally, I explored supporting HPC ecosystem tools to understand how clusters are provisioned and managed.
 
-Ansible: I reviewed the playbook structure to understand how infrastructure-as-code is used to configure clusters consistently.
-Slurm configuration files: I examined how partitions and scheduling policies are defined.
-Spack documentation: I studied how HPC environments manage complex software dependencies across clusters.
+Ansible: Imagine you need to install Python and configure Slurm on 500 compute nodes. Instead of logging into each server, you create an Ansible Playbook then run ansible-playbook install-python.yaml Ansible will SSH into every node, run the commands verify the desired state exists and report failures. 
 
-I did this because HPC systems are not just compute engines — they are full-stack environments that require orchestration, configuration management, and reproducible software stacks.
+Slurm configuration files: I examined how partitions and scheduling policies are defined. Slurm sits between users and compute nodes, users sibmit jobs with sbathc, job queue in partitions and lsurm dispatched them yo nodes when the requested resource - CPUs memory, GPUS are available. 
+
+Spack documentation: Spack is a package manager built for scientific software. It handles the combiniatorial compelxity of building the same library against different compilers and MPI version. For example when some groups need CUDA 11 and others need CUDA 12. When you install with Spack it can auto generaye lmod modules so users just module load like normal.
+
+
 
 ---
 
