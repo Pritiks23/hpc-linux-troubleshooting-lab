@@ -1,11 +1,14 @@
-echo "Checking SSH service..."
-systemctl status ssh
+#!/bin/bash
 
-echo "Checking port 22..."
+echo "Checking SSH connectivity..."
+
 nc -zv localhost 22
 
-echo "Checking logs..."
-journalctl -u ssh -n 50 --no-pager
+echo ""
+echo "SSH processes:"
+ps aux | grep ssh | grep -v grep
 
-echo "Checking authentication failures..."
-grep "Failed password" /var/log/auth.log 2>/dev/null
+echo ""
+echo "Simulated auth logs:"
+echo "Failed password for user"
+echo "Connection closed"
