@@ -5,7 +5,7 @@ After=network.target
 [Service]
 ExecStart=/bin/bash /opt/app/run.sh
 Restart=always
-User=demo
+User=root
 
 [Install]
 WantedBy=multi-user.target
