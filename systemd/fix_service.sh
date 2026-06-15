@@ -1,4 +1,8 @@
 #!/bin/bash
+
+echo "Attempting service recovery..."
+
 systemctl daemon-reexec
-systemctl restart broken-app.service
-systemctl status broken-app.service
+systemctl restart broken_service.service
+
+systemctl status broken_service.service
