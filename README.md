@@ -11,7 +11,7 @@ The lab is designed to replicate real-world cluster troubleshooting workflows in
 ---
 
 ## What This Project Demonstrates
-1. MPI (Parallel Execution Layer)
+## 1. MPI (Parallel Execution Layer)
 
 I started with MPI because it represents the fundamental compute layer in HPC systems — where work is distributed across multiple processes.
 
@@ -25,7 +25,7 @@ I did this because in containerized environments like Codespaces, the system doe
 
 This helped me understand how MPI adapts to constrained environments and how process-based parallelism is actually orchestrated.
 
-2. Slurm (Batch Scheduling Simulation)
+## 2. Slurm (Batch Scheduling Simulation)
 
 Next, I explored the Slurm module because real HPC systems never run workloads manually — everything goes through a scheduler.
 
@@ -43,7 +43,7 @@ execution phase
 completion logging
 
 This helped me understand how compute clusters enforce fairness, scheduling policies, and resource isolation.
-3. System Failure Simulation (Linux Troubleshooting Layer)
+## 3. System Failure Simulation (Linux Troubleshooting Layer)
 
 I then moved into failure scenarios because understanding HPC systems requires knowing how they break under pressure.
 
@@ -68,7 +68,7 @@ I did this because disk saturation is a common issue in HPC environments due to 
 Instead of actually filling the disk, the script surfaced filesystem usage, which allowed me to interpret df -h output and understand how to identify storage pressure before it becomes a system-wide failure.
 
 
-SSH Failure Scenario
+## SSH Failure Scenario
 
 I then simulated an SSH/service failure using:
 
@@ -79,7 +79,7 @@ I did this because remote access is critical in HPC systems, and SSH failures of
 The output showed that systemd was not available in this environment, which helped me understand how service management differs between full Linux systems and containerized environments like Codespaces.
 
 
-4. systemd Service Debugging
+## 4. systemd Service Debugging
 
 I then worked on debugging a broken systemd service configuration.
 
@@ -98,7 +98,7 @@ I did this because systemd failures in real HPC environments are often caused by
 Since systemd is not active in this container, I validated correctness by manually executing the target script instead of relying on systemctl.
 
 
-5. HPC Ecosystem Concepts (Ansible + Slurm + Spack)
+## 5. HPC Ecosystem Concepts (Ansible + Slurm + Spack)
 
 Finally, I explored supporting HPC ecosystem tools to understand how clusters are provisioned and managed.
 
